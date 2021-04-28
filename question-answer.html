@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="module" src="newIndex.js" defer></script>
+    <title>Quakoot!</title>
+</head>
+<body>
+    <a href="index.html">Play again changing difficulty</a>
+    <p id="difficulty-type"></p>
+    <div class="container">
+        <div id="quiz">
+            <h1>Quak<span>oot!!</span></h1>
+                <section class="questions-container">
+                    <h2 id="question"></h1>
+                </section>
+                <!--Section Answers, Button-->
+                <section class="answer-container">
+                    
+                </section>
+                <!--Section Progress in the Quizz-->
+                <section class="progress-container">
+                    <h3 id="score"></h3>
+                    <p id="progressQuestion"></p>
+                </section>
+                <!--Section PopUP-->
+                <section class="popup-container">
+                    <div id="pop-up-true">
+                    </div>
+                    <div id="pop-up-false">
+                    </div>
+                    <div id="pop-up-end">     
+                    </div>
+                </section>
+        </div>        
+    </div>
+    </div>
+    <aside id="chronometer-container">
+        <div id="clock">
+            <div id="sphere">
+                <span id="secDec" class="number">0</span><span id="secUni" class="number">0</span>
+            </div>
+        </div>
+    </aside>
+</body>
+</html>
