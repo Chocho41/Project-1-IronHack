@@ -5,14 +5,44 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/style.css">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script type="module" src="newIndex.js" defer></script>
     <title>Quakoot!</title>
 </head>
 <body>
-    <h1>Launch the Super Quizz!</h1>
-    <a class="start-button" href="./question-answer.html?level=easy">Easy</a>
-    <a class="start-button" href="./question-answer.html?level=medium">Medium</a>
-    <a class="start-button" href="./question-answer.html?level=hard">Hard</a>
+    <hearder>
+        <nav class="menu">
+            <div id="logo"><span>(Qu)</span>akoot Spot Quizz Edition 2021</div>
+            <div id="menu-list">
+            </div>
+        </nav>
+    </hearder>
+    <section id="Welcome">
+        <h1>Launch the Super Quizz!</h1>
+
+    </section>
+    <section id="rules">
+        <h2>What is this game about ?</h2>
+        <p>This quizz is about Sports. You have three level of difficulties. You get +3 for Each good answers and none for incorrect but don't be a bitch and play hard !</p>
+        <p></p>
+    </section>
+    <section id="launch-quizz">
+        <h3>Choose your level :)</h3>
+        <div class="launch-quizz-button">
+            <a class="start-button" href="./question-answer.html?level=easy">Easy</a>
+            <a class="start-button" href="./question-answer.html?level=medium">Medium</a>
+            <a class="start-button" href="./question-answer.html?level=hard">Hard</a>
+        </div>
+    </section>
+    <div class="bg-music">
+        <audio id="myMusic" src="./images/star-wars-john-williams-cantina-band-original.mp3" loop=""></audio>
+    </div>
+    <footer>
+        <div id="footer-container">
+            <p>Brought to you By Chocho l'amigo</p>
+        </div>
+    </footer>
 </body>
 </html>

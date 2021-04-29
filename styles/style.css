@@ -1,112 +1,289 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&family=Zen+Dots&family=Krona+One&display=swap");
 
-*{
-    box-sizing: border-box;
+
+* {
+  box-sizing: border-box;
+}
+
+/*for desktop/*/
+
+@media (min-width: 1000px) {
+    .responsive-div {
+
+    }
+}
+
+/*for Tablets/*/
+@media (min-width: 650px) and (max-width: 999px) {
+    .responsive-div {
+
+    }
+  }
+
+/*for for mobile the rest/*/
+
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --backgroundColor: rgba(246, 241, 209);
+  --colorShadeA: rgb(47, 129, 92);
+  --colorShadeB: rgb(121, 186, 156);
+  --colorShadeC: rgb(150, 232, 195);
+  --colorShadeD: rgb(187, 232, 211);
+  --colorShadeE: rgb(94, 182, 141);
 }
 
 body {
-    font-family: 'Roboto Condensed', sans-serif;
-    display: grid;
-    align-items: center;
-    justify-items: center;
-    min-height: 100vh;
-    background: #0B4F6C;
-    color: #01BAEF;
+  font-family: "Roboto Condensed", sans-serif;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  min-height: 100vh;
+  background: rgba(246, 241, 209);
+  color: #01baef;
+  font-size: 1rem;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 a {
-    color: #ffffff;
+  color:#ffffff;
+  list-style-type: none;
+  text-decoration: none;
+  border:rgba(246, 241, 209);
+  margin: 30px 0px 30px;
 }
 
 h1 {
-    font-size: 3rem;
-    text-transform: uppercase;
+  font-size: 3rem;
+  text-transform: uppercase;
 }
 
 h3 {
-    color: #20BF55;
-    font-size: 1.5rem;
+  color: rgb(121, 173, 186);
+  font-size: 1.5rem;
+}
+
+ul {
+    list-style-type: none;
+    text-decoration: none;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+li {
+  text-decoration: none;
+  list-style-type: none;
+
+}
+
+nav {
+    height: 10vh;
+    width: 100vw;
+    position: relative;
+    border: solid 2px rgba(0, 0, 0, 0.3); 
+  background-color: rgb(94, 182, 141);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  top: 0;
+  right: 0;
+  min-width: 100%;
+}
+
+.menu {
+
+
+}
+
+#menu-list {
+    width: 30%;
+    color:rgb(243, 243, 243);
+    font-weight: bolder;
+}
+
+.menu li {
+
+}
+
+#logo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+#rules {
+    width: 60%;
+    height: 70%;
+    font-style: italic;
+    font-size: 1rem;
+    border-style: solid;
+    border-color: rgb(150, 232, 195);
+    padding: 30px 30px 0px 30px;
+    display: flex;
+    align-items: center;
+}
+
+
+.launch-quizz-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.launch-quizz-button .start-button {
+  padding: 1em 2em;
+  margin: 2em;
+  border: 2px solid var(--colorShadeA);
+  border-radius: 1em;
+  background: var(--colorShadeE);
+  transform-style: preserve-3d;
+  transition: all 175ms cubic-bezier(0, 0, 1, 1);
+}
+
+.launch-quizz-button .start-button:hover {
+  background: var(--colorShadeD);
+  transform: translate(0, 0.375em);
+}
+
+.launch-quizz-button .start-button:active {
+  transform: translate(0em, 0.75em);
+}
+
+.launch-quizz-button .start-button:active::before {
+  transform: translate3d(0, 0, -1em);
+  box-shadow: 0 0 0 2px var(--colorShadeB), 0 0.25em 0 0 var(--colorShadeB);
 }
 
 .container .answer-container {
-        display: flex;
-        flex-wrap: wrap;
-        margin: 3rem auto 3rem;
-        width: 500px;
-    }
-
+  display: flex;
+  flex-wrap: wrap;
+  margin: 3rem auto 3rem;
+  width: 500px;
+}
 
 .container .btn {
-    flex: 1 0 45%;
-    width: 200px;
-    height: 80px; 
-    border-radius: 5px;
-    cursor: pointer;
-    border: none;
-    margin: .4rem;
-    outline: none;
-    background: #757575;
-    user-select: none;
-    font-weight: 600;
+  flex: 1 0 45%;
+  width: 200px;
+  height: 80px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  margin: 0.4rem;
+  outline: none;
+  background: rgb(150, 232, 195);
+  user-select: none;
+  font-weight: 600;
 }
 
 button {
-    color: #ffffff;
+  color: #ffffff;
+  cursor: pointer;
 }
 
 .btn:hover {
-    background-color: #20BF55;
-    transition: 1s;
+  background-color: #20bf55;
+  transition: 1s;
 }
 
 .btn:active {
-    transform: scale(.10);
-    transition: .3s;
+  transform: scale(0.1);
+  transition: 0.3s;
 }
 
 /*Pop-up*/
 .btnPopup {
-    background-color: #757575;
-    padding: 1em 2em;
-    cursor: pointer;
+  background-color: rgb(150, 232, 195);
+  padding: 1em 2em;
+  cursor: pointer;
+  border-radius: 5px;
+  text-decoration: none;
+  border-color: rgb(121, 173, 186);
+  border-width: 4px;
 }
 
-.btnPopup:hover{
-    background-color: #20BF55;
-    transition: .6s;
+.btnPopup:hover {
+  background-color: #20bf55;
+  transition: 0.6s;
 }
 
 .overlay {
-    position: fixed;
-    left: 0px;
-    top:0px;
-    background-color: rgba(0,0 ,0 , 0.5);
-    width: 100%;
-    height: 100%;
-    z-index:1;
-    display:none;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: none;
 }
 
-.popup{
-    margin: 10% auto ;
-    height: 70%;
-    width: 70%;
-    background-color: rgb(243, 243, 243);
-    padding: 1em;
-    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
-    border-radius: 5px;
-    display: flex;
-    justify-content: space-evenly;
-    }
-
-.popup img{
-    max-width: 100%;
-    max-height: 100%;
+.popup {
+  margin: 10% auto;
+  height: 50%;
+  width: 50%;
+  background-color: rgb(243, 243, 243);
+  padding: 1em;
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-evenly;
 }
 
-.overlay-end {
+#popup-text {
+    -ms-flex-align: center;
+}
+
+.popup img {
+  max-width: 100%;
+  max-height: 100%;
+  border-style: solid;
+  border-width: 5px;
+  border-color: rgb(150, 232, 195);
+}
+
+#messageFalse {
+font-family: 'Krona One', sans-serif;
+color: tomato;
+}
+
+#messageTrue {
+font-family: 'Krona One', sans-serif; 
+color: rgb(24, 212, 49);
+}
+
+#footer-container {
+font-size: 1.9em;
+height: 20vh;
+width: 100vw;
+text-align: center;
+display: flex;
+justify-content: space-between;
+align-items: center;
+background-color: #4F6D7A;
+right: 0;
+display: flex;
+justify-content: center;
+}
+
+#footer-container > p {
+    color:rgb(243, 243, 243);
+    text-align: center;
+    font-weight: bolder;
 
 }
-.popup-end {
-    
+
+
+#popup-text > p {
+    font-style: oblique;
+    font-weight: bolder;
 }
+

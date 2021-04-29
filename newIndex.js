@@ -6,6 +6,7 @@ const printQuestion = document.getElementById("question");
 const answerContainer = document.querySelector(".answer-container");
 const popUpTrue = document.getElementById("pop-up-true");
 const popUpFalse = document.getElementById("pop-up-false");
+const popUpEnd = document.getElementById("pop-up-end");
 const popUpContainer = document.getElementsByClassName("popup-container");
 
 // START VARIABLES : INITIAL VALUES
@@ -40,9 +41,10 @@ const shuffleAnswers = (array) => {
 
 // LOGIC : Function to display questions
 function getData() {
-  console.log(quiz);
+  console.log(step);
   let element = quiz[step];
-
+  console.log(quiz.length);
+  if (step < quiz.length) {
   // fill the question
   printQuestion.innerHTML = `${element.question}`;
 
@@ -57,27 +59,33 @@ function getData() {
     answerContainer.innerHTML += `<button class="btn">${answer}</button>`;
   });
   listenAllButtons();
-  chrono.startClick(printTime);
+  //chrono.startClick(printTime);
+  } else if (step >= quiz.length) {
+    endOfQuizPopUp();
+  }
+
 }
 
 function checkAnswer(e) {
   let currentAnswer = e.target.innerHTML;
   let solution = quiz[step].correct_answer;
 
-  if (currentAnswer === solution) {
+  if (currentAnswer === solution && step < quiz.length) {
     printTrueAnswer();
     score = score + 3;
-  } else {
+  } else if (currentAnswer != solution && step < quiz.length) {
     printFalseAnswer();
-    score--;
+  } else if (step >= quiz.length) {
+    endOfQuizPopUp();
   }
   step++;
+  printQuestion.innerHTML = "";
   answerContainer.innerHTML = "";
   getData();
-  chrono.stopClick();
+  //chrono.stopClick();
   console.log(score);
   console.log(step);
-  quizIsFinished();
+  //quizIsFinished();
 }
 
 // LOGIC : PLACE EVENT LISTENERS ON BUTTONS
@@ -108,9 +116,9 @@ function listenAllButtons() {
 
 // LOGIC : RESULT
 function printTrueAnswer() {
-  const popUpTrue = document.getElementById("pop-up-true");
   popUpTrue.innerHTML = "";
   popUpFalse.innerHTML = "";
+  popUpEnd.innerHTML = "";
   //popUpTrue.appenChild(gifTrue);
   popUpTrue.innerHTML += `
     <div id="overlay" class="overlay">
@@ -129,14 +137,13 @@ function printTrueAnswer() {
     </div>
     `;
   openPopUP();
-  quizIsFinished();
   listenNextQuestion();
 }
 
 function printFalseAnswer() {
-  const popUpFalse = document.getElementById("pop-up-false");
   popUpFalse.innerHTML = "";
   popUpTrue.innerHTML = "";
+  popUpEnd.innerHTML = "";
   //popUpFalse.appenChild(gifFalse);
   popUpFalse.innerHTML += `
     <div id="overlay" class="overlay">
@@ -154,7 +161,6 @@ function printFalseAnswer() {
     </div>
     </div>`;
   openPopUP();
-  quizIsFinished();
   listenNextQuestion();
 }
 //Pop-up opener
@@ -176,19 +182,25 @@ function listenNextQuestion() {
   btnPopup.addEventListener("click", closePopUp);
 }
 
+function listenButtonEnd() {
+  const btnPopup = document.querySelector(".btnPopup");
+  console.log(btnPopup);
+  btnPopup.addEventListener("click", closePopUp);
+}
+
 //Check if end of quizz
-function quizIsFinished() {
+/*/function quizIsFinished() {
   console.log(step >= quiz.length);
   if (step >= quiz.length) {
     endOfQuizPopUp();
   }
-}
+}/*/
 //if (quiz.quizIsFinished() === true) {
 
 function endOfQuizPopUp() {
   popUpFalse.innerHTML = "";
   popUpTrue.innerHTML = "";
-  popUpFalse.innerHTML += `
+  popUpEnd.innerHTML += `
     <div id="overlay" class="overlay">
     <div id="popup" class="popup">
     <div id="popup-text">
@@ -205,11 +217,13 @@ function endOfQuizPopUp() {
     </div>
     </div>;
     `;
+    openPopUP();
+    listenButtonEnd();
 }
+////////////////////////////////////////////////////////////////////////:
+/*import { Chronometer } from "./chronometer.js";
 
-import { Chronometer } from "./chronometer.js";
-
-//Chronometer
+//Chronometer/////////////////////////////////////////////////////////////
 var chrono = new Chronometer();
 //time display
 var secDec = document.getElementById("secDec");
@@ -217,7 +231,7 @@ var secUni = document.getElementById("secUni");
 
 function printTime() {
   printSeconds();
-  timeOut();
+  //timeOut();
 }
 
 function formatTime(time, dec, uni) {
@@ -233,7 +247,12 @@ function timeOut() {
   if (secUni.textContent === "0") {
     step++;
     chrono.stopClick();
-    //answerContainer.innerHTML = "";
-    //getData();
-  }
+  };
+} /*/
+/////////////////////////////////////////////////////////////
+//Musique
+function musicOn () {
+  const music = document.getElementById("myMusic").play();
 }
+//Musique on
+musicOn ();
