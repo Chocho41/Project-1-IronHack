@@ -14,14 +14,6 @@
   box-sizing: border-box;
 }
 
-:root {
-  --backgroundColor: rgba(246, 241, 209);
-  --colorShadeA: rgb(47, 129, 92);
-  --colorShadeB: rgb(121, 186, 156);
-  --colorShadeC: rgb(150, 232, 195);
-  --colorShadeD: rgb(187, 232, 211);
-  --colorShadeE: rgb(94, 182, 141);
-}
 
 body {
   font-family: "Roboto Condensed", sans-serif;
@@ -122,15 +114,15 @@ nav {
 .launch-quizz-button .start-button {
   padding: 1em 3em 1em;
   margin: 1em 3em 0em;
-  border: 2px solid var(--colorShadeA);
+  border: 2px solid rgb(47, 129, 92);
   border-radius: 1em;
-  background: var(--colorShadeE);
+  background: rgb(94, 182, 141);
   transform-style: preserve-3d;
   transition: all 175ms cubic-bezier(0, 0, 1, 1);
 }
 
 .launch-quizz-button .start-button:hover {
-  background: var(--colorShadeD);
+  background: rgb(187, 232, 211);
   transform: translate(0, 0.375em);
 }
 
@@ -140,7 +132,7 @@ nav {
 
 .launch-quizz-button .start-button:active::before {
   transform: translate3d(0, 0, -1em);
-  box-shadow: 0 0 0 2px var(--colorShadeB), 0 0.25em 0 0 var(--colorShadeB);
+  box-shadow: 0 0 0 2px rgb(121, 186, 156), 0 0.25em 0 0 rgb(121, 186, 156);
 }
 
 .container .answer-container {
